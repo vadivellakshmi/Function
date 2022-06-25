@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.fa-heart{
+
+  color: red;
+}
+
+.fa-thumbs-up{
+
+  color: yellow;
+}
+.fa-twitter{
+  color:blue;
+  font-size: larger;
+}
