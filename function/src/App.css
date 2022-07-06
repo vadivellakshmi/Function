@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100&display=swap');
+
 .App {
   text-align: center;
 }
@@ -49,4 +52,124 @@
 .fa-twitter{
   color:blue;
   font-size: larger;
+}
+
+.Nav-brand{
+ 
+  font-size: 50px;
+ display: flex;
+ justify-content:space-between;
+  position: fixed;
+  z-index: index 2;
+  width:80%;
+  top: 0;
+  background-color: #fff;
+  height: 77px;
+}
+
+.Nav-brand input{
+  
+ 
+  font-size: large;
+  margin-top: 20px;
+}
+
+.instargram{
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: bolder;
+}
+
+.Post-user {
+
+  display:flex;
+  padding: 16px;
+  align-items: center;
+  margin-left: 50px;
+  margin-top:60px; 
+}
+.Post-user-profilepicture{
+  width: 50px;
+  height: 40px;
+}
+
+.Post-user-profilepicture img {
+
+  width: 100%;
+
+  height: 100%;
+
+  border-radius: 50%;
+
+}
+.Post-user-nickname {
+
+  margin-left: 12px;
+
+  font-family: 'PT Sans', sans-serif;
+
+  font-weight: bold;
+
+}
+
+
+
+.Post-image img {
+
+  display: block;
+
+  width: 80%;
+
+  margin-left: 10%;
+
+}
+
+.Post-caption {
+
+  padding: 16px 16px;
+  text-align: start;
+  margin-left: 10%;
+
+}
+
+.Post-caption strong {
+
+  font-family: 'PT Sans', sans-serif;
+
+  font-weight: bold;
+
+}
+
+.content{
+
+  font-family: 'PT Sans', sans-serif;
+
+  padding: 16px 16px;
+  text-align: start;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.form-heading{
+ 
+ 
+ height: 100vh;
+background-color: purple;
+
+color: whitesmoke;
+
+
+}
+
+.heading{
+
+  padding-top: 80px;
+  padding-bottom: 30px;
+ 
+}
+
+label{
+  font-size: larger;
+  font-family: 'PT Sans', sans-serif;
 }
