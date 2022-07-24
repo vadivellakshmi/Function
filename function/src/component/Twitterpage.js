@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Hit from "./Hit";
+import Like from "./Like";
 const Twitterpage = () =>{
 const[list, setList] = useState([]);
 const[search, setSearch]= useState([]);
 useEffect(() =>{
-   axios({url:"http://fakeapi.jsonparseronline.com/posts", 
+   axios({url:"https://fakestoreapi.com/products", 
    method: "get"}).then((res) =>{
     setList(res.data)
    })
@@ -24,7 +26,7 @@ useEffect(() =>{
           </div>
           {list.filter(item =>{
                     if(search == ""){return item}
-                    else if(search == item.likes){return item}
+                    else if(search == item.id){return item}
                     
                  }).map((item) =>{
                      return(
@@ -33,7 +35,7 @@ useEffect(() =>{
 
              <div className="Post-user-profilepicture">
 
-             <img src="https://i.stack.imgur.com/6KMzJ.png" alt="" />
+             <img src={item.image} alt="" />
 
                      </div>
 
@@ -48,19 +50,18 @@ useEffect(() =>{
 
             <div className="Post-image-bg">
 
-              <img alt="" src="https://th.bing.com/th/id/R.9069ae2c83237354d556ac82e37c8066?rik=wVvlGFIhBYX5bg&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f06%2fHD-images-of-nature-download.jpg&ehk=J7hY3CfwcsW7lTkuGbE3nQPUYPdt1OTluYfKHRW62qs%3d&risl=&pid=ImgRaw&r=0" />
-                         
+            <img src={item.image} alt="" />
           </div>
 
              </div>
 
              <div className="Post-caption">
-
-             <span className= "likes"><i class="fa-solid fa-heart"></i>&nbsp;{item.likes}&nbsp;&nbsp;&nbsp; <i class="fa-solid fa-thumbs-up"></i> &nbsp;{item.hits}&nbsp;&nbsp;&nbsp; <i class="fa-solid fa-comment-dots"></i>&nbsp;{item.categoryId} &nbsp;&nbsp;&nbsp;</span><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{item.title} </strong> 
+             {/* //<i class="fa-solid fa-heart"></i>&nbsp;{item.rating.rate} <i class="fa-solid fa-thumbs-up"></i> &nbsp;{item.rating.count} */}
+             <span className= "likes"><Like usercounts= {item.rating.count}/>&nbsp;&nbsp;&nbsp; <Hit  usercount= {item.rating.rate}/> &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-comment-dots"></i>&nbsp;{item.category} &nbsp;&nbsp;&nbsp; Rs.{item.price} <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{item.title} </strong> </span>
 
                         </div>
                         <article className ="content" >
-                            {item.content}
+                            {item.description}
                         </article>
                </div>
               
